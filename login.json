@@ -1,0 +1,8 @@
+{
+  "username": "new@blynk.cc",
+  "password": "new",
+  "host": "localhost",
+  "port": 9443,
+  "tls": true,
+  "appname": "Blynk"
+}
