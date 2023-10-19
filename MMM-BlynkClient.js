@@ -5,16 +5,20 @@ Module.register("MMM-BlynkClient",{
     blynkServer: 'sonos.local',
     tls: true,
     port: 9443,
+		dashboard: 'MUSICBOX',
   },
 	start: function() {
     Log.info('Starting module: ' + this.name);
 		const self = this;
     self.sendSocketNotification('BLYNK_CLIENT', {
-      blynkServer: self.config.blynkServer,
-      username: self.config.username,
-			password: self.config.password,
-			tls: self.config.tls,
-			port: self.config.port,
+      login: {
+				blynkServer: self.config.blynkServer,
+      	username: self.config.username,
+				password: self.config.password,
+				tls: self.config.tls,
+				port: self.config.port,
+			},
+			dashboard: self.config.dashboard,
     });
 		setInterval(() => {
 			this.updateDom(0);
